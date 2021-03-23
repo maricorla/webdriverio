@@ -1,9 +1,11 @@
-const Page = require('./page');
+import Page from '../test/pageobjects/page'
 
 /**
  * sub page containing specific selectors and methods for a specific page
  */
 class LoginPage extends Page {
+
+
     /**
      * define selectors using getter methods
      */
@@ -27,6 +29,10 @@ class LoginPage extends Page {
     open () {
         return super.open('login');
     }
+
+    submit(){
+        this.btnSubmit.click()
+    }
 }
 
-module.exports = new LoginPage();
+export default new LoginPage();
